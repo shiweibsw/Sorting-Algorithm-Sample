@@ -2,6 +2,11 @@ package com.sort.algorithm.sample;
 
 public class MaoPao {
 
+    /**
+     * 冒泡排序
+     * @param arr
+     * @param n
+     */
     public static  void bubbleSort(int[] arr,int n){
         boolean flag;
         for (int i = 1; i < n; i++) {
@@ -18,6 +23,11 @@ public class MaoPao {
         }
     }
 
+    /**
+     * 选择排序
+     * @param arr
+     * @param n
+     */
     public static void selectSort(int arr[], int n) {
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
@@ -34,6 +44,11 @@ public class MaoPao {
         }
     }
 
+    /**
+     * 插入排序
+     * @param arr
+     * @param n
+     */
     public static void insertSort(int[] arr, int n) {
         for (int i = 0; i < n - 1; i++) {
             for (int j = i + 1; j > 0; j--) {
@@ -48,6 +63,11 @@ public class MaoPao {
         }
     }
 
+    /**
+     * 希尔排序
+     * @param arr
+     * @param length
+     */
     public static  void shellSort(int arr[],int length){
         int temp = 0;
         int incre = length;
@@ -76,6 +96,12 @@ public class MaoPao {
         }
     }
 
+    /**
+     * 快速排序
+     * @param a
+     * @param left
+     * @param right
+     */
     public static void quicksort(int a[], int left, int right) {
         int i, j, t, temp;
 
@@ -108,6 +134,11 @@ public class MaoPao {
         quicksort(a, i + 1, right);//继续处理右边的
     }
 
+    /**
+     * 桶排序
+     * @param keys
+     * @param bucketNum
+     */
     public static  void sort(int[] keys, int bucketNum) {
         int len = keys.length;
         int[] bucket = new int[bucketNum];
@@ -168,9 +199,25 @@ public class MaoPao {
 //            System.out.print(arr[i] + ",");
 //        }
 
-        int[] a = {1, 4, 8, 3, 2, 9, 5, 0, 7, 6, 9, 10, 9, 13, 14, 15, 11, 12, 17, 16, 19};
-        sort(a, 20);
+//        int[] a = {1, 4, 8, 3, 2, 9, 5, 0, 7, 6, 9, 10, 9, 13, 14, 15, 11, 12, 17, 16, 19};
+//        sort(a, 20);
 
+
+
+        int targetNumber = 1;
+        boolean isGet;
+
+        for (; ; ) {
+            targetNumber++;
+            isGet = (targetNumber % 2 == 1) && (targetNumber % 3 == 0)
+                    && (targetNumber % 4 == 1) && (targetNumber % 5 == 4)
+                    && (targetNumber % 6 == 3) && (targetNumber % 7 == 0)
+                    && (targetNumber % 8 == 1) && (targetNumber % 9 == 0);
+            if (isGet) {
+                System.out.println(targetNumber);
+                break;
+            }
+        }
 
     }
 }
